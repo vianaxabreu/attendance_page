@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Thank You</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Load Le Wagon/GoRails-like styles -->
+  <!-- Styles -->
   <link rel="stylesheet" href="https://d26jy9fbi4q9wx.cloudfront.net/assets/asset_application-18d540d2203231abf05a6db069e33e4311ad36af051ebdd45adf40a5cdc53f92.css" />
   <link rel="stylesheet" href="https://d26jy9fbi4q9wx.cloudfront.net/assets/application-07e2ef0d32699de7b3ac9f0329300f0a46e726cee1850ec575c0d978468d58d7.css" />
 </head>
@@ -17,17 +17,28 @@
       <img alt="Logo" src="https://d26jy9fbi4q9wx.cloudfront.net/assets/logo-ae2beeecce25d711f577b08deb9adfc6c02b673ed106b8d6c3da0f1721d9da33.svg" style="height: 30px;">
     </a>
     <div class="d-flex align-items-center">
-        <img src="{{ avatar }}" alt="Avatar" class="rounded-circle" style="height: 32px; width: 32px;">
+      <img id="avatar" src="" alt="Avatar" class="rounded-circle" style="height: 32px; width: 32px;">
     </div>
   </nav>
 
   <!-- Thank You Card -->
   <div class="container mt-5 d-flex justify-content-center">
     <div class="card p-4" style="max-width: 500px; width: 100%;">
-      <h1 class="text-primary text-center mb-3">Thank You, {{ user }}!</h1>
-      <p class="text-center text-dark">We've logged you in with the email: <strong>{{ email }}</strong></p>
+      <h1 class="text-primary text-center mb-3" id="thank-you-title">Thank You!</h1>
+      <p class="text-center text-dark" id="email-display">We've logged you in with the email: <strong></strong></p>
     </div>
   </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const user = params.get("user") || "Guest";
+    const email = params.get("email") || "unknown@example.com";
+    const avatar = params.get("avatar") || "https://via.placeholder.com/32";
+
+    document.getElementById("thank-you-title").textContent = `Thank You, ${user}!`;
+    document.querySelector("#email-display strong").textContent = email;
+    document.getElementById("avatar").src = avatar;
+  </script>
 
 </body>
 </html>
