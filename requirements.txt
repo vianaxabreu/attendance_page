@@ -2,3 +2,4 @@ flask
 dotenv
 gunicorn
 qrcode
+Pillow
