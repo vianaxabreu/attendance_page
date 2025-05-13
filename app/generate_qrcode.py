@@ -1,13 +1,17 @@
 import random
 import qrcode
 from datetime import datetime
+import os
 
 
 def generate_random_code(length=6):
     return ''.join(random.choices(string.ascii_uppercase + string.digits, k=length))
 
 def main():
-
+    FORM_URL_BASE = os.getenv('FORM_URL_BASE')
+    OUTPUT_DIR = os.getenv('OUTPUT_DIR')
+    CODE_LENGTH = int(os.getenv('CODE_LENGTH'))
+    
     code = generate_random_code(CODE_LENGTH)
     # add the code to the url, will be implemented later
     # full_url = f"{FORM_URL_BASE}{code}"
