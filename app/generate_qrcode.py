@@ -1,7 +1,7 @@
 import random
 import qrcode
 from datetime import datetime
-import os
+import os, string
 
 
 def generate_random_code(length=6):
