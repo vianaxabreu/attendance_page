@@ -5,6 +5,10 @@ import os
 app = Flask(__name__)
 
 @app.route('/')
+def qrcode():
+    return render_template('qrcode.html')
+
+@app.route('/index')
 def index():
     return render_template('index.html')
 
@@ -25,7 +29,7 @@ def thankyou():
     user = request.args.get("user")
     email = request.args.get("email")
     avatar = request.args.get("avatar")
-    return render_template('thank2.html', user=user, email=email, avatar=avatar)
+    return render_template('thankyou.html', user=user, email=email, avatar=avatar)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)

@@ -1,31 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Login with GitHub</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding-top: 50px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #24292e;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #444c56;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Welcome</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{{ url_for('static', filename='asset_application.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='application.css') }}" />
+
+
 </head>
-<body>
-  <h1>Login with GitHub</h1>
-  <a href="/login" style="text-decoration: none;">
-    <button type="button">Login with GitHub</button>
+
+<body class="bg-grey">
+
+  <!-- Navbar -->
+
+
+
+
+<nav>
+  <a href="/">
+    <img alt="Logo" src="static/lw-logo.svg" style="height: 30px;">
   </a>
+  <div>
+    <img id="avatar" src="static/null-person.png" style="height: 30px; width: 30px;" >
+  </div>
+</nav>
+
+
+
+  <!-- Welcome card -->
+
+
+  <div class="container center-content mt-5">
+  <div class="card p-4" style="max-width: 500px; width: 100%;">
+      <h1 class="text-center" id="welcome-title">Welcome</h1>
+      <div class="d-flex justify-content-center">
+        <h1 class="btn btn-primary" style="display: none; width: fit-content;" id="github_login" onclick="loginWithGitHub()">Login with GitHub</h1>
+
+        <!-- ble device -->
+        <a class="btn btn-bluetooth" style=" width: fit-content;" onclick="scanForBLEDevices()">Scan for BLE Devices</a>
+        <!-- end ble device -->
+
+        <p id="deviceFound"></p>
+
+      
+
+      </div>
+    </div>
+  </div>
+    
+  
+  <script>
+    // Function to scan for nearby Bluetooth devices
+    async function scanForBLEDevices() {
+      if (!navigator.bluetooth) {
+          alert('Web Bluetooth is not supported on this browser. Please use Google Chrome or Microsoft Edge.');
+          return;
+      }
+
+      try {
+          // Request for nearby devices (without pairing)
+          const device = await navigator.bluetooth.requestDevice({
+              acceptAllDevices: true,
+              optionalServices: []
+          });
+
+          // Get the name of the found device
+          const deviceName = device.name || "Unnamed Device";
+
+          
+
+          if (deviceName === "BigEye") {
+            document.getElementById("github_login").style.display = "inline-block";
+            document.getElementById("deviceFound").textContent = "Please, login with Git Hub";
+          }
+          else {
+            document.getElementById("deviceFound").textContent = `${deviceName}: It seems you are not on campus yet`;
+          }
+          
+      } catch (error) {
+          console.error('Error:', error);
+          alert('Error during BLE scan.');
+      }
+    }
+    // end Function to scan for nearby Bluetooth devices
+
+    function loginWithGitHub() {
+      const githubAuthUrl = "http://github.com/login/oauth/authorize";
+      const clientId = "Ov23liNZY8YaiwGtjmrg";
+      const redirectUri = "http://localhost:5000/callback";
+      const scope = "read:user user:email";
+
+      const authUrl = `${githubAuthUrl}?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scope)}`;
+      window.location.href = authUrl;
+    }
+  </script>
+
+
+
+
+      
+
+  <script>
+      
+  </script>
 </body>
 </html>

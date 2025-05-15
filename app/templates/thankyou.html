@@ -2,77 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Thank You</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto', Arial, sans-serif;
-      background-color: #f4f7f9;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+  <title>Thank you</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{{ url_for('static', filename='asset_application.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='application.css') }}" />
 
-    .navbar {
-      background-color: #1f2937;
-      color: white;
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-      font-weight: 500;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
 
-    .navbar .brand {
-      font-size: 1.2rem;
-    }
-
-    .thank-you {
-      flex-grow: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-    }
-
-    .thank-you-content {
-      text-align: center;
-      background-color: #fff;
-      padding: 2rem 3rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      max-width: 500px;
-      width: 100%;
-    }
-
-    .thank-you-content h1 {
-      color: #2d7aee;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .thank-you-content p {
-      font-size: 1.1rem;
-      color: #444;
-    }
-  </style>
 </head>
-<body>
 
-  <div class="navbar">
-    <div class="brand">MyApp</div>
-    <div>👤</div>
+<body class="bg-grey">
+
+  <!-- Navbar -->
+
+
+
+
+<nav>
+  <a href="/">
+    <img alt="Logo" src="static/lw-logo.svg" style="height: 30px;">
+  </a>
+  <div>
+    <img id="avatar" src="static/null-person.png" style="height: 30px; width: 30px;" >
   </div>
+</nav>
 
-  <div class="thank-you">
-    <div class="thank-you-content">
-      <h1>Thank You, {{ user }}!</h1>
-      <p>We've logged you in with the email: <strong>{{ email }}</strong></p>
+
+
+  <!-- Welcome card -->
+  <div class="container center-content">
+    <div class="card text-center">
+      <h1 class="text" id="thank-you-title">Thank You!</h1>
+      <p id="email-display">We've logged you in with the email: <strong></strong></p>
     </div>
   </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const user = params.get("user") || "Guest";
+    const email = params.get("email") || "unknown@example.com";
+    const avatar = params.get("avatar") || "static/null-person.png";
+
+    document.getElementById("thank-you-title").textContent = `Thank You, ${user}!`;
+    document.querySelector("#email-display strong").textContent = email;
+    document.querySelector("#email-display strong").style.color = "#007bff";
+    document.getElementById("avatar").src = avatar;
+  </script>
 
 </body>
 </html>

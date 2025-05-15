@@ -4,48 +4,105 @@
   <meta charset="UTF-8">
   <title>Welcome</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Styles -->
-  <link rel="stylesheet" href="https://d26jy9fbi4q9wx.cloudfront.net/assets/asset_application-18d540d2203231abf05a6db069e33e4311ad36af051ebdd45adf40a5cdc53f92.css" />
-  <link rel="stylesheet" href="https://d26jy9fbi4q9wx.cloudfront.net/assets/application-07e2ef0d32699de7b3ac9f0329300f0a46e726cee1850ec575c0d978468d58d7.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='asset_application.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='application.css') }}" />
+
+
 </head>
 
 <body class="bg-grey">
 
   <!-- Navbar -->
-  <nav class="container-fluid navbar background-dark-blue d-flex justify-content-between align-items-center px-4 py-3">
-    <a class="navbar-logo" href="/">
-      <img alt="Logo" src="https://d26jy9fbi4q9wx.cloudfront.net/assets/logo-ae2beeecce25d711f577b08deb9adfc6c02b673ed106b8d6c3da0f1721d9da33.svg" style="height: 30px;">
-    </a>
-    <div class="d-flex align-items-center">
-      <img id="avatar" src="" alt="👤" class="rounded-circle" style="height: 32px; width: 32px;">
-    </div>
-  </nav>
+
+
+
+
+<nav>
+  <a href="/">
+    <img alt="Logo" src="static/lw-logo.svg" style="height: 30px;">
+  </a>
+  <div>
+    <img id="avatar" src="static/null-person.png" style="height: 30px; width: 30px;" >
+  </div>
+</nav>
+
+
 
   <!-- Welcome card -->
 
 
-  <div class="container mt-5 d-flex justify-content-center">
+  <div class="container center-content mt-5">
   <div class="card p-4" style="max-width: 500px; width: 100%;">
-    <h1 class="text-center" id="welcome-title">Welcome to Le Wagon Berlin</h1>
-    <div class="d-flex justify-content-center">
-      <a class="btn btn-primary" style="width: fit-content;" onclick="loginWithGitHub()">Login with GitHub</a>
+      <h1 class="text-center" id="welcome-title">Welcome</h1>
+      <div class="d-flex justify-content-center">
+        <h1 class="btn btn-primary" style="display: none; width: fit-content;" id="github_login" onclick="loginWithGitHub()">Login with GitHub</h1>
+
+        <!-- ble device -->
+        <a class="btn btn-bluetooth" style=" width: fit-content;" onclick="scanForBLEDevices()">Scan for BLE Devices</a>
+        <!-- end ble device -->
+
+        <p id="deviceFound"></p>
+
+      
+
+      </div>
     </div>
   </div>
-</div>
-
-
+    
+  
   <script>
-      function loginWithGitHub() {
-        const githubAuthUrl = "https://github.com/login/oauth/authorize";
-        const clientId = "Ov23liKCfP18ezZGnfV3";
-        const redirectUri = "https://attendance-api-lw-906041588659.europe-west10.run.app/callback";
-        const scope = "read:user user:email";
-
-        const authUrl = `${githubAuthUrl}?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scope)}`;
-        window.location.href = authUrl;
+    // Function to scan for nearby Bluetooth devices
+    async function scanForBLEDevices() {
+      if (!navigator.bluetooth) {
+          alert('Web Bluetooth is not supported on this browser. Please use Google Chrome or Microsoft Edge.');
+          return;
       }
 
+      try {
+          // Request for nearby devices (without pairing)
+          const device = await navigator.bluetooth.requestDevice({
+              acceptAllDevices: true,
+              optionalServices: []
+          });
+
+          // Get the name of the found device
+          const deviceName = device.name || "Unnamed Device";
+
+          
+
+          if (deviceName === "BigEye") {
+            document.getElementById("github_login").style.display = "inline-block";
+            document.getElementById("deviceFound").textContent = "Please, login with Git Hub";
+          }
+          else {
+            document.getElementById("deviceFound").textContent = `${deviceName}: It seems you are not on campus yet`;
+          }
+          
+      } catch (error) {
+          console.error('Error:', error);
+          alert('Error during BLE scan.');
+      }
+    }
+    // end Function to scan for nearby Bluetooth devices
+
+    function loginWithGitHub() {
+      const githubAuthUrl = "http://github.com/login/oauth/authorize";
+      const clientId = "Ov23liNZY8YaiwGtjmrg";
+      const redirectUri = "http://localhost:5000/callback";
+      const scope = "read:user user:email";
+
+      const authUrl = `${githubAuthUrl}?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scope)}`;
+      window.location.href = authUrl;
+    }
   </script>
 
+
+
+
+      
+
+  <script>
+      
+  </script>
 </body>
 </html>

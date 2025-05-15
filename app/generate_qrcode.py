@@ -23,6 +23,8 @@ def main():
     file_name = "qr.png"
     file_path = os.path.join(OUTPUT_DIR, file_name)
     qr.save(file_path)
+    with open(os.path.join(OUTPUT_DIR, "code.txt"), "w") as _:
+        _.write(str(code))
     return "QR Code generated"
 if __name__ == "__main__":
     main()
