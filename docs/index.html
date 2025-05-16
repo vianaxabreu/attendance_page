@@ -37,10 +37,10 @@
   <div class="card p-4" style="max-width: 500px; width: 100%;">
       <h1 class="text-center" id="welcome-title">Welcome</h1>
       <div class="d-flex justify-content-center">
-        <h1 class="btn btn-primary" style="display: none; width: fit-content;" id="github_login" onclick="loginWithGitHub()">Login with GitHub</h1>
+        <h1 class="btn btn-primary" style="display: inline-block; width: fit-content;" id="github_login" onclick="loginWithGitHub()">Login with GitHub</h1>
 
         <!-- ble device -->
-        <a class="btn btn-bluetooth" style=" width: fit-content;" onclick="scanForBLEDevices()">Scan for BLE Devices</a>
+        <a class="btn btn-bluetooth" style="width: fit-content;" onclick="scanForBLEDevices()">Scan for BLE Devices</a>
         <!-- end ble device -->
 
         <p id="deviceFound"></p>
@@ -54,6 +54,7 @@
   
   <script>
     // Function to scan for nearby Bluetooth devices
+    /*
     async function scanForBLEDevices() {
       if (!navigator.bluetooth) {
           alert('Web Bluetooth is not supported on this browser. Please use Google Chrome or Microsoft Edge.');
@@ -71,7 +72,7 @@
           const deviceName = device.name || "Unnamed Device";
 
           
-
+          
           if (deviceName === "BigEye") {
             document.getElementById("github_login").style.display = "inline-block";
             document.getElementById("deviceFound").textContent = "Please, login with Git Hub";
@@ -84,7 +85,7 @@
           console.error('Error:', error);
           alert('Error during BLE scan.');
       }
-    }
+    }*/
     // end Function to scan for nearby Bluetooth devices
 
     function loginWithGitHub() {

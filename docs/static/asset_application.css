@@ -1,27 +1,21 @@
-/* First Custom CSS (asset_application.css-inspired) */
-
-/* Global Styling */
 :root {
-  --primary-color: #2e5bff; /* Primary blue */
-  --secondary-color: #333; /* Dark text */
-  --background-color: #f7f8fa; /* Light background */
-  --button-hover: #1e4c9b; /* Button hover effect */
-  --border-color: #e1e4e8; /* Border color */
-  --font-family: 'Arial', sans-serif;
+  --app-primary-color: #2e5bff;
+  --app-secondary-color: #333;
+  --app-background-color: #f7f8fa;
+  --app-button-hover: #1e4c9b;
+  --app-border-color: #e1e4e8;
+  --app-font-family: 'Arial', sans-serif;
 }
 
-/* Reset and Base Styling */
 body {
-  font-family: var(--font-family);
-  background-color: var(--background-color);
-  color: var(--secondary-color);
+  font-family: var(--app-font-family);
+  background-color: var(--app-background-color);
+  color: var(--app-secondary-color);
   margin: 0;
   padding: 0;
 }
 
-/* Scoped container class for centering content */
 .container.center-content {
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -29,33 +23,32 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
-/* Typography */
 h1, h2, h3, h4 {
   font-weight: 700;
-  color: var(--secondary-color);
+  color: var(--app-secondary-color);
 }
 
 p, a {
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--secondary-color);
+  color: var(--app-secondary-color);
 }
 
 a {
   text-decoration: none;
-  color: var(--primary-color);
+  color: var(--app-primary-color);
 }
 
 a:hover {
-  color: var(--button-hover);
+  color: var(--app-button-hover);
 }
 
-/* Buttons */
 .button, button, input[type="submit"] {
-  background-color: var(--primary-color);
-  color: white;
+  background-color: var(--app-primary-color);
+  color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -64,41 +57,39 @@ a:hover {
 }
 
 .button:hover, button:hover, input[type="submit"]:hover {
-  background-color: var(--button-hover);
+  background-color: var(--app-button-hover);
 }
 
-/* Cards */
 .card {
   display: flex;
-  text-align: center;
   flex-direction: column;
-  align-items: center; /* Horizontal centering for children */
-  justify-content: center; /* Vertical centering */
-  background-color: white;
-  border: 1px solid var(--border-color);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid var(--app-border-color);
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card h3 {
-  color: var(--primary-color);
+  color: var(--app-primary-color);
 }
 
 .card p {
-  color: var(--secondary-color);
+  color: var(--app-secondary-color);
 }
 
-/* Forms */
 input[type="text"], input[type="email"], select, textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--app-border-color);
   border-radius: 4px;
   margin-bottom: 20px;
 }
 
 input[type="text"]:focus, input[type="email"]:focus, select:focus, textarea:focus {
   outline: none;
-  border-color: var(--primary-color);
+  border-color: var(--app-primary-color);
 }
