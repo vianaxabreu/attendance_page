@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Attendance Tracker</title>
+  <!-- Link your existing CSS files here -->
+  <link rel="stylesheet" href="/attendance_page/static/asset_application.css">
+  <link rel="stylesheet" href="/attendance_page/static/application.css">
+  <style>
+    /* Optional: basic table styling to match your card style */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1em 0;
+    }
+    th, td {
+      border: 1px solid var(--app-border-color, #e1e4e8);
+      padding: 0.75em 1em;
+      text-align: left;
+    }
+    th {
+      background-color: var(--app-background-color, #f7f8fa);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container center-content">
+    <article class="card">
+
+      <h1>📊 Student Attendance Tracker with GitHub Authentication</h1>
+
+      <h2>Project Overview</h2>
+      <p>A web-based attendance system designed to automate and simplify student attendance collection using GitHub login, QR codes, and Google Sheets integration.</p>
+
+      <h2>Problem Statement</h2>
+      <p>Traditional attendance methods are inefficient, error-prone, and tedious. This project provides a digital solution where students authenticate with their GitHub accounts and their attendance is logged automatically into a Google Sheet, complete with timestamps and session identifiers.</p>
+
+      <h2>🏗️ Solution Architecture</h2>
+
+      <h3>🔐 Authentication</h3>
+      <p>Students securely authenticate via GitHub OAuth, ensuring verified identities without extra accounts or passwords.</p>
+
+      <h3>🌐 Frontend</h3>
+      <p>A minimal, responsive web interface hosted on <strong>GitHub Pages</strong> enables students to log in and mark attendance quickly.</p>
+
+      <h3>⚙️ Backend</h3>
+      <p>Developed with <strong>Flask (Python)</strong> and deployed on <strong>Google Cloud Run</strong> for scalable and reliable backend services.</p>
+
+      <h3>📄 Data Logging</h3>
+      <p>On successful login, the following data is recorded in a Google Sheet:</p>
+      <ul>
+        <li>GitHub Username</li>
+        <li>Timestamp</li>
+        <li>QR Session Code</li>
+      </ul>
+
+      <h3>🔲 QR Code Integration</h3>
+      <p>A unique QR code is generated per session. Scanning this code initiates the login process and attaches a session-specific identifier to the attendance log.</p>
+
+      <h2>✅ Current Status</h2>
+      <p>The project is actively under development. Core features like GitHub login, attendance logging, and QR code flow are functional. Work in progress includes:</p>
+      <ul>
+        <li>Enhanced session management</li>
+        <li>User interface improvements</li>
+        <li>Additional security layers</li>
+      </ul>
+
+      <h2>🛠️ Tech Stack</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Layer</th>
+            <th>Technology</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Frontend</td>
+            <td>HTML, CSS, JavaScript, GitHub Pages</td>
+          </tr>
+          <tr>
+            <td>Backend</td>
+            <td>Python (Flask), Google Cloud Run</td>
+          </tr>
+          <tr>
+            <td>Authentication</td>
+            <td>GitHub OAuth</td>
+          </tr>
+          <tr>
+            <td>Data Storage</td>
+            <td>Google Sheets API</td>
+          </tr>
+          <tr>
+            <td>Extras</td>
+            <td>QR Code generation & scanning</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr />
+
+      <p><em>This project is part of an ongoing effort to modernize attendance tracking through automation and cloud-based technologies.</em></p>
+
+    </article>
+  </div>
+
+</body>
+</html>
