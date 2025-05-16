@@ -93,3 +93,46 @@ input[type="text"]:focus, input[type="email"]:focus, select:focus, textarea:focu
   outline: none;
   border-color: var(--app-primary-color);
 }
+
+
+/* Add this at the end of your existing app CSS */
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  margin-top: 1em;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0.5em 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--app-primary-color);
+}
+
+a:hover {
+  color: var(--app-button-hover);
+  text-decoration: underline;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+th, td {
+  border: 1px solid var(--app-border-color);
+  padding: 10px;
+  text-align: left;
+}
+
+code {
+  background-color: #f6f8fa;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: monospace;
+}
