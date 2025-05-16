@@ -1,16 +1,10 @@
----
-layout: page
-title: "Student Attendance Tracker"
-permalink: /attendance/
----
-
 # 📊 Student Attendance Tracker with GitHub Authentication
 
 ## Project Overview
 A web-based attendance system designed to automate and simplify student attendance collection using GitHub login, QR codes, and Google Sheets integration.
 
 ## Problem Statement
-Traditional attendance methods are inefficient, error-prone, and tedious. This project provides a digital solution where students authenticate with their GitHub accounts and their attendance is logged automatically into a Google Sheet, complete with timestamps and session identifiers.
+Traditional attendance methods in paper written is inefficient, error-prone, and tedious. This project provides a digital solution where students authenticate with their GitHub accounts and their attendance is logged automatically into a Google Sheet, complete with timestamps.
 
 ## 🏗️ Solution Architecture
 
