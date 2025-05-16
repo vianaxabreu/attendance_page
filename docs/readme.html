@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Student Attendance Tracker</title>
-  <!-- Link your existing CSS files here -->
+  <meta charset="UTF-8">
+  <title>Welcome</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--link rel="stylesheet" href="{{ url_for('static', filename='asset_application.css') }}" /-->
+  <!--link rel="stylesheet" href="{{ url_for('static', filename='application.css') }}" /-->
   <link rel="stylesheet" href="/attendance_page/static/asset_application.css">
   <link rel="stylesheet" href="/attendance_page/static/application.css">
-  <style>
-    /* Optional: basic table styling to match your card style */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1em 0;
-    }
-    th, td {
-      border: 1px solid var(--app-border-color, #e1e4e8);
-      padding: 0.75em 1em;
-      text-align: left;
-    }
-    th {
-      background-color: var(--app-background-color, #f7f8fa);
-      font-weight: 700;
-    }
-  </style>
-</head>
-<body>
 
-  <div class="container center-content">
+
+</head>
+
+<body class="bg-grey">
+
+  <!-- Navbar -->
+
+
+
+
+<nav>
+  <a href="/">
+    <img alt="Logo" src="static/lw-logo.svg" style="height: 30px;">
+  </a>
+  <div>
+    <img id="avatar" src="static/null-person.png" style="height: 30px; width: 30px;" >
+  </div>
+</nav>
+
+
+
+  <!-- Welcome card -->
+
+
+  <div class="container center-content mt-5">
+  <div class="card p-4" style="max-width: 500px; width: 100%;">
+      <h1 class="text-center" id="welcome-title">Welcome</h1>
+      <div class="d-flex justify-content-center">
+        <div class="container center-content">
     <article class="card">
 
       <h1>📊 Student Attendance Tracker with GitHub Authentication</h1>
@@ -107,5 +117,9 @@
     </article>
   </div>
 
+
+      </div>
+    </div>
+  </div>
 </body>
 </html>
