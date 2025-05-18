@@ -63,9 +63,9 @@
     }*/
 
     function loginWithGitHub() {
-      const githubAuthUrl = "http://github.com/login/oauth/authorize";
-      const clientId = "Ov23liNZY8YaiwGtjmrg";
-      const redirectUri = "http://localhost:5000/callback";
+      const githubAuthUrl = "https://github.com/login/oauth/authorize";
+      const clientId = "Ov23liKCfP18ezZGnfV3";
+      const redirectUri = "https://attendance-api-lw-906041588659.europe-west10.run.app/callback";
       const scope = "read:user user:email";
 
       const authUrl = `${githubAuthUrl}?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scope)}`;
