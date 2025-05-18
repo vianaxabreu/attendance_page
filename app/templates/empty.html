@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./static/application.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/">
+            <img alt="Logo" src="./static/home.png" height="30" width="30" />
+        </a>
+        <div>
+            <img id="avatar" src="./static/null-person.png" height="30" width="30" />
+        </div>
+    </nav>
+
+    <div class="container center-content mt-5">
+        <div class="card limited-width">
+            <h1 class="text-center" id="welcome-title">Welcome</h1>
+            <div class="button-group">
+                <button id="github_login" class="btn btn-primary github-login" type="button"
+                    onclick="loginWithGitHub()">Login with GitHub</button>
+                <button class="btn btn-bluetooth" type="button" onclick="scanForBLEDevices()">Scan for BLE
+                    Devices</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

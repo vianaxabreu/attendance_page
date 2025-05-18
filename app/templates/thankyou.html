@@ -1,38 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Thank you</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="{{ url_for('static', filename='asset_application.css') }}" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='application.css') }}" />
-
-
+  <meta charset="UTF-8" />
+  <title>Thank You</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./static/application.css">
 </head>
 
-<body class="bg-grey">
+<body>
+  <nav>
+    <a href="/">
+      <img alt="Logo" src="./static/home.png" height="30" width="30" />
+    </a>
+    <div>
+      <img id="avatar" src="./static/null-person.png" height="30" width="30" />
+    </div>
+  </nav>
 
-  <!-- Navbar -->
-
-
-
-
-<nav>
-  <a href="/">
-    <img alt="Logo" src="static/lw-logo.svg" style="height: 30px;">
-  </a>
-  <div>
-    <img id="avatar" src="static/null-person.png" style="height: 30px; width: 30px;" >
-  </div>
-</nav>
-
-
-
-  <!-- Welcome card -->
-  <div class="container center-content">
-    <div class="card text-center">
+  <div class="container center-content mt-5">
+    <div class="card limited-width">
       <h1 class="text" id="thank-you-title">Thank You!</h1>
       <p id="email-display">We've logged you in with the email: <strong></strong></p>
+      <p><a href="https://docs.google.com/spreadsheets/d/13NTXPuCsvwEQBecVAPWOvt-nOBl166hcLqcu5tjuZw0/edit?usp=sharing" target="_blank">You can check attendees here</a></p>
+
     </div>
   </div>
 
@@ -47,6 +38,6 @@
     document.querySelector("#email-display strong").style.color = "#007bff";
     document.getElementById("avatar").src = avatar;
   </script>
-
 </body>
+
 </html>

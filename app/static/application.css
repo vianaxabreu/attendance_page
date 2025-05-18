@@ -1,4 +1,11 @@
 :root {
+  /* Colors */
+  --app-primary-color: #2e5bff;
+  --app-secondary-color: #333;
+  --app-background-color: #f7f8fa;
+  --app-button-hover: #1e4c9b;
+  --app-border-color: #e1e4e8;
+
   --navbar-color: #243038;
   --navbar-hover: #1a232b;
   --button-color: #469ae0;
@@ -6,16 +13,130 @@
   --text-color: #2f3b45;
   --background-color: #ffffff;
   --border-color: #dfe3e8;
-  --font-family: 'Helvetica', 'Arial', sans-serif;
+
+  /* Fonts */
+  --app-font-family: 'Arial', sans-serif;
+  --navbar-font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
+/* Reset & Base */
+body {
+  font-family: var(--app-font-family);
+  background-color: var(--app-background-color);
+  color: var(--app-secondary-color);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  color: var(--app-secondary-color);
+  margin-top: 1em;
+}
+
+p, a {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--app-secondary-color);
+  margin: 0.5em 0;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: var(--app-primary-color);
+}
+
+a:hover {
+  color: var(--app-button-hover);
+  text-decoration: underline;
+}
+
+/* Containers and Layout */
+.container.center-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+/* Card */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid var(--app-border-color);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  color: var(--app-primary-color);
+}
+
+.card p {
+  color: var(--app-secondary-color);
+}
+
+/* Limited width utility */
+.limited-width {
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Text alignment */
+.text-justify {
+  text-align: left;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--app-primary-color);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+th, td {
+  border: 1px solid var(--app-border-color);
+  padding: 10px;
+  text-align: left;
+}
+
+/* Code blocks */
+code {
+  background-color: #f6f8fa;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+/* Navigation */
 nav {
   background-color: var(--navbar-color);
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: var(--navbar-font-family);
 }
+
 
 .btn {
   display: inline-flex;
@@ -73,5 +194,12 @@ fieldset:disabled .btn {
 .btn-bluetooth:focus {
   color: #5f6670;
   text-decoration: underline;
-  box-shadow: 0 0 0 0.2rem rgba(98,169,229,0.5);
+  
+}
+
+.button-group {
+    display: flex;
+    gap: 10px; /* space between buttons */
+    justify-content: center; /* center horizontally */
+    flex-wrap: wrap; /* optional: wrap on small screens */
 }

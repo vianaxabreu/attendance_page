@@ -1,43 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Welcome</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!--link rel="stylesheet" href="{{ url_for('static', filename='asset_application.css') }}" /-->
-  <!--link rel="stylesheet" href="{{ url_for('static', filename='application.css') }}" /-->
-  <link rel="stylesheet" href="/attendance_page/static/asset_application.css">
-  <link rel="stylesheet" href="/attendance_page/static/application.css">
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./static/application.css">
 </head>
 
-<body class="bg-grey">
+<body>
+  <nav>
+    <a href="/">
+      <img alt="Logo" src="./static/home.png" height="30" width="30" />
+    </a>
+    <div>
+      <img id="avatar" src="./static/null-person.png" height="30" width="30" />
+    </div>
+  </nav>
 
-  <!-- Navbar -->
-
-
-
-
-<nav>
-  <a href="/">
-    <img alt="Logo" src="static/lw-logo.svg" style="height: 30px;">
-  </a>
-  <div>
-    <img id="avatar" src="static/null-person.png" style="height: 30px; width: 30px;" >
-  </div>
-</nav>
-
-
-
-  <!-- Welcome card -->
-  <div class="container center-content">
-  <div class="card">
-      <h1 class="text-center" id="welcome-title">Scan Me</h1>
-      <div >
-        <img src="static/qr.png" alt="QR Code" style="max-width: 100%;">
-      </div>
+  <div class="container center-content mt-5">
+    <div class="card limited-width">
+      <h1 class="text-center" id="welcome-title">Welcome</h1>
+      <img src="./static/qr.png" alt="QR Code" style="max-width: 100%;">
     </div>
   </div>
 </body>
+
 </html>
