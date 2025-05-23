@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, request, send_from_directory
 from dotenv import load_dotenv
 import os
 
-app = Flask(__name__, static_folder="app/static")
+app = Flask(__name__, static_folder='static', static_url_path='/static')
 
 @app.route('/')
 def qrcode():
@@ -43,5 +43,9 @@ def thankyou():
 def serve_static(filename):
     return send_from_directory("app/static", filename)
 
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+    
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)

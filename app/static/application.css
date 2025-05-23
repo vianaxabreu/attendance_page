@@ -96,6 +96,11 @@ a:hover {
   width: 100%;
 }
 
+.wide-card {
+    max-width: 100%;
+    width: 100%;
+}
+
 /* Text alignment */
 .text-justify {
   text-align: left;
@@ -203,3 +208,40 @@ fieldset:disabled .btn {
     justify-content: center; /* center horizontally */
     flex-wrap: wrap; /* optional: wrap on small screens */
 }
+
+.metrics-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.metric-card {
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  min-width: 220px;
+  flex: 1 1 200px;
+}
+
+.metric-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.metric-value {
+  font-size: 2rem;
+  color: var(--app-primary-color);
+  font-weight: bold;
+}
+
+.low-score {
+  color: #e63946; /* A strong red */
+}
+

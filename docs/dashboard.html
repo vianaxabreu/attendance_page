@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/application.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/">
+            <img alt="Logo" src="/static/home.png" height="30" width="30" />
+        </a>
+        <div>
+            <img id="avatar" src="/static/null-person.png" height="30" width="30" />
+        </div>
+    </nav>
+
+    <div class="container center-content mt-5">
+        <div class="card limited-width text-center">
+            <h1 class="text" id="thank-you-title">Welcome!</h1>
+
+            <div class="metrics-container">
+            <div class="metric-card">
+                <div class="metric-title">Attendance</div>
+                <div class="metric-value" id="attendanceValue">--%</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-title">Exercise Completion</div>
+                <div class="metric-value" id="exerciseValue">--%</div>
+            </div>
+        </div>
+        </div>
+
+        
+    </div>
+
+    <script src="/static/dashboard.js"></script>
+
+</body>
+
+</html>
